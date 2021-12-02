@@ -24,3 +24,7 @@ app.use(express.json());
 
 app.use("/users", userController);
 
+
+
+const itemsController = require("./src/controllers/items-controller.js");
+app.use("/item", itemsController);

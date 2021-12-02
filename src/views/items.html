@@ -1,72 +1,28 @@
 <html>
-  <head>
-  
-  </head>
-  <body>
-
   <script src="items.js"></script>
+<head>
+</head>
+<body>
     <h1>Sælg vare</h1>
-    
-    <form id="form">
-      
-    </form>
-    <input type="button" onclick="location.href='/index.html';" value="Gå tilbage" />
-  
-<input type="button" onclick="location.href='/itemsSell.html';" value="Se solgte vare" />
-<form>
-        <div class="form">
-            <label for="vare">Produkt</label>
-            <input type="text" id="vare" placeholder="Navn på produkt"/>
-        </div>
-        <div class="form">
-            <label for="varekategori">Varekategori</label>
-            <input type="text" id="varekategori" placeholder="Varekategori"/>
-        </div>
-        <div class="form">
-            <label for="pris">Pris</label>
-            <input type="number" id="pris" placeholder="Pris"/>
 
-        </div>
-        <div class="form">
-            <button id="btn">Tilføj vare</button>
-        </div>
-        <div id="Besked">
-            <pre></pre>
-        </div>
-    <form>
-    <input type='file' />
-    <br><img id="myImg" src="#" alt="Indsæt billede" height=200 width=200
-    </form>
-    <script>
-    
-        let items = [];
+    <form id="formVare">
+      <label for="vare">Produkt</label>
+      <input type="text" id="vare" placeholder="Navn på produkt"/>
+
+      <label for="vareKategori">Varekategori</label>
+      <select name="vareKategori" id="vareKategori">
+        <option value="Taske"></option>
+        <option value="Tøj"></option>
+        <option value="Sko"></option>
+      </select>
  
-        const addItems = (ev)=>{
-            ev.preventDefault();  
-            let item = {
-                id: Date.now(),
-                vare: document.getElementById('vare').value,
-                varekategori: document.getElementById('varekategori').value,
-                pris: document.getElementById('pris').value
-            }
-            items.push(item);
-       
+      <label for="pris">Pris</label>
+      <input type="number" id="pris" placeholder="Pris"/>
 
-     
-            alert('Vare tilføjet');
-            let pre = document.querySelector('#Besked pre');
-            pre.textContent = '\n' + JSON.stringify(items, '\t', 2);
-
-            
-            localStorage.setItem('items', JSON.stringify(items) );
-        }
-        document.addEventListener('DOMContentLoaded', ()=>{
-            document.getElementById('btn').addEventListener('click', addItems);
-        });
-
-
-    </script>
-
+      <button type="submit">Submit</button>
+    </form>
+      <input type='file' />
+      <br><img id="myImg" src="#" alt="Indsæt billede" height=200 width=20/>
 
     
 </body>

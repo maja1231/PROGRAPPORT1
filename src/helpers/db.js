@@ -24,7 +24,10 @@ class DB {
     this.users.push(user);
     this.saveFile(USER_FILE, JSON.stringify(this.users));
   }
+  
 
+
+  //Slet bruger
   deleteUser(user) {
     this.users = this.users.filter((x) => x.email != user.email);
     this.saveFile(USER_FILE, JSON.stringify(this.users));
@@ -33,6 +36,24 @@ class DB {
   findUser(user) {
     return this.users.find((x) => user.email == x.email);
   }
+
+
+  //Opdater bruger
+  updateUser(user) {
+    for (let i=0; i < this.users.length; i++) {
+      console.log(this.users[i]); 
+      console.log(user);
+      if (this.users[i].email == user.oldEmail) {
+        this.users[i].email = user.email;
+        this.users[i].password = user.password;
+      }
+    }
+    this.saveFile(USER_FILE, JSON.stringify(this.users));
+  }
+
+
+
 }
+
 
 module.exports = new DB();

@@ -9,6 +9,11 @@ router.post("/create", (req, res) => {
   res.status(200).send(true);
 });
 
+
+
+
+
+//slet bruger
 router.delete("/delete", (req, res) => {
   const user = new userModel(req.body.email, req.body.password);
   db.deleteUser(user);
@@ -29,4 +34,13 @@ router.post("/login", (req, res) => {
   }
 });
 
+//Opdater bruger
+router.put("/update", (req, res) => {
+  const user = {email: req.body.email, password: req.body.password, oldEmail: req.body.oldEmail};
+  db.updateUser(user);
+  res.status(200).send(true);
+});
+
 module.exports = router;
+
+
