@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     location.href = "/login.html";
   }
 
-  //Slet bruger
+  //Slet bruger oprettes 
   document.getElementById("delete").addEventListener("submit", (event) => {
     event.preventDefault();
 

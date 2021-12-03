@@ -1,3 +1,4 @@
+//Her vil login blive oprettet 
 document.addEventListener("DOMContentLoaded", (event) => {
   const user = localStorage.getItem("user");
   if (user) {
