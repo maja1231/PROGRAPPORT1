@@ -1,6 +1,8 @@
-//Database for users 
+//Database for bruger (user) 
+
 var fs = require("fs");
 
+//Hvor filen gemmes
 const ABSOLUTE_PATH = __dirname + "/../../data";
 const USER_FILE = "/users.json";
 
@@ -28,7 +30,7 @@ class DB {
   
 
 
-  //Slet bruger
+  //Slet brugeren
   deleteUser(user) {
     this.users = this.users.filter((x) => x.email != user.email);
     this.saveFile(USER_FILE, JSON.stringify(this.users));
@@ -39,7 +41,7 @@ class DB {
   }
 
 
-  //Opdater bruger
+  //Opdater brugeren
   updateUser(user) {
     for (let i=0; i < this.users.length; i++) {
       console.log(this.users[i]); 

@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     location.href = "/login.html";
   }
 
-  //Slet bruger oprettes 
+  //Slet bruger 
   document.getElementById("delete").addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -29,4 +29,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
       });
   });
 });
+
 

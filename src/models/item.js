@@ -1,3 +1,4 @@
+
 class Item {
     constructor(vare, vareKategori, pris) {
       this.vare = vare;

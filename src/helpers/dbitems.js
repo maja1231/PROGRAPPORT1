@@ -1,4 +1,4 @@
-//Database for vare
+//Database for vare (item) --> Her gemmes items
 var fs = require("fs");
 
 const ABSOLUTE_PATH = __dirname + "/";
@@ -9,7 +9,7 @@ class DB {
     this.items = this.openItemFile(ITEM_FILE);
   }
  
-  
+  //Her gennems fil med vores items
   saveItemFile(fileName, contentString) {
     fs.writeFileSync(ABSOLUTE_PATH + fileName, contentString);
   }
@@ -21,7 +21,7 @@ class DB {
   }
   
 
-//Gem item
+  //Gem item
   saveItem(item) {
     this.items.push(item);
     this.saveItemFile(ITEM_FILE, JSON.stringify(this.items));
