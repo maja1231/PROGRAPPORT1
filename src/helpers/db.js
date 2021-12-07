@@ -1,3 +1,4 @@
+//Database for users 
 var fs = require("fs");
 
 const ABSOLUTE_PATH = __dirname + "/../../data";

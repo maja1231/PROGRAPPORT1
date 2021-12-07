@@ -1,3 +1,4 @@
+//Database for vare
 var fs = require("fs");
 
 const ABSOLUTE_PATH = __dirname + "/";
@@ -20,7 +21,7 @@ class DB {
   }
   
 
-// save item
+//Gem item
   saveItem(item) {
     this.items.push(item);
     this.saveItemFile(ITEM_FILE, JSON.stringify(this.items));

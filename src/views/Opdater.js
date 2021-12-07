@@ -1,5 +1,3 @@
-
-
 function updateUser(){
     var oldEmail = localStorage.getItem("user");
     oldEmail = JSON.parse(oldEmail)
