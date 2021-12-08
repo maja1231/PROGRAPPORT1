@@ -15,9 +15,7 @@ app.listen(PORT, () => {
 //Referer til user controller
 const userController = require("./src/controllers/user-controller");
 
-
-
-//Referer til views mappen, som er bl.a login
+//Referer til views mappen, som er vores hjemmesider bl.a login osv.
 app.use(express.static("./src/views"));
 
 app.use(express.json());
@@ -29,3 +27,4 @@ app.use("/users", userController);
 //Referer til items controller
 const itemsController = require("./src/controllers/items-controller.js");
 app.use("/item", itemsController);
+

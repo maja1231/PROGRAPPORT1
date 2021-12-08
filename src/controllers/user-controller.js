@@ -13,13 +13,15 @@ router.post("/create", (req, res) => {
 
 
 
-//slet bruger
+//Slet bruger
 router.delete("/delete", (req, res) => {
   const user = new userModel(req.body.email, req.body.password);
   db.deleteUser(user);
   res.status(200).send(true);
 });
 
+
+// Log ind
 router.post("/login", (req, res) => {
   const user = new userModel(req.body.email, req.body.password);
   const found = db.findUser(user);
