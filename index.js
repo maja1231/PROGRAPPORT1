@@ -15,9 +15,10 @@ app.listen(PORT, () => {
 //Referer til user controller
 const userController = require("./src/controllers/user-controller");
 
-//Referer til views mappen, som er vores hjemmesider bl.a login osv.
+//Middleware --> det der vil ske før, der bliver kørt noget i vores controller,
+//Vil gøre alt indholdet i Views til at blive vores endpoints.  
 app.use(express.static("./src/views"));
-
+//Hver gang der bliver skrevet noget i body vil dette være string --> til JSON
 app.use(express.json());
 
 //Routes
@@ -25,6 +26,6 @@ app.use("/users", userController);
 
 
 //Referer til items controller
-const itemsController = require("./src/controllers/items-controller.js");
+const itemsController = require("./src/controllers/items-controller");
 app.use("/item", itemsController);
 

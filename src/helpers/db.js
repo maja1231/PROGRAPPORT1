@@ -1,14 +1,16 @@
 //Database for bruger (user) 
 
+//Fs er et "bibloteket" --> så vi kan læse/gemme noget tekst fra computeren fx JSON fil
 var fs = require("fs");
 
-//Hvor filen gemmes
+//Hvor filen gemmes --> Laver to variabler til vil referer til data mappen ind i users.json
 const ABSOLUTE_PATH = __dirname + "/../../data";
 const USER_FILE = "/users.json";
 
+//Funktioner i database
 class DB {
   constructor() {
-    this.users = this.openFile(USER_FILE);
+    this.users = this.openFile(USER_FILE); //users.json indholdet
   }
  
   
@@ -16,15 +18,15 @@ class DB {
     fs.writeFileSync(ABSOLUTE_PATH + fileName, contentString);
   }
 
-
+  //Se fil med bruger bruger
   openFile(fileName) {
-    const file = fs.readFileSync(ABSOLUTE_PATH + fileName);
-    return JSON.parse(file);
+    const file = fs.readFileSync(ABSOLUTE_PATH + fileName); //ind i data mappen + ind i users.json
+    return JSON.parse(file); //Gør filen til JSON
   }
 
-
+  //Gemmer fil med bruger
   saveUser(user) {
-    this.users.push(user);
+    this.users.push(user); 
     this.saveFile(USER_FILE, JSON.stringify(this.users));
   }
   
