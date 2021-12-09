@@ -6,15 +6,15 @@ const db = require("../helpers/dbitems"); //Henter fra mappe Helpers --> dbitem.
 // Opret item
 router.post("/createitem", (req, res) => {
     const item = new itemModel(req.body.vare, req.body.vareKateogri, req.body.pris); //hvad objektet item består af: vare + varekategori + pris
-    db.saveItem(item); //Hver gang vi kører create vil det gemte item gemmes
-    res.status(200).send(true); //Giver svar tilbage at item 
+    db.saveItem(item); //Hver gang vi kører create vil det registeret item gemmes
+    res.status(200).send(true); //Giver svar tilbage at item.
 });
 
 //slet item
 router.delete("/delete", (req, res) => {
     const item = new itemModel(req.body.vare, req.body.vareKateogri, req.body.pris);
-    db.deleteItem(item);
-    res.status(200).send(true);
+    db.deleteItem(item); //item vil slettes
+    res.status(200).send(true); //giver svar at item er slettet
   });
   
   router.post("/login", (req, res) => {

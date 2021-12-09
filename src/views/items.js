@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     document.getElementById("formVare").addEventListener("submit", (event) => {
       event.preventDefault();
 
-  
+      //Laver variabel med vare + varekategori + pris og value vil være det brugeren skriver/ den kategori de vælger
       const vare = document.getElementById("vare").value;
       const vareKategori = document.getElementById("vareKategori").value;
       const pris = document.getElementById("pris").value;
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 });
 
-
+ //Tilføj billede af vare 
   window.addEventListener('load', function() {
     document.querySelector('input[type="file"]').addEventListener('change', function() {
         if (this.files && this.files[0]) {

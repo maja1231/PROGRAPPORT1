@@ -14,7 +14,7 @@ class DB {
     fs.writeFileSync(ABSOLUTE_PATH + fileName, contentString);
   }
 
-
+ //Item kan åbnes
   openItemFile(fileName) {
     const file = fs.readFileSync(ABSOLUTE_PATH + fileName);
     return JSON.parse(file);
@@ -33,13 +33,7 @@ class DB {
     this.saveItemFile(ITEM_FILE, JSON.stringify(this.items));
   }
 
-  findItem(item) {
-    return this.items.find((x) => item.vare == x.vare);
-  }
-
-
 
 }
-
 
 module.exports = new DB();
