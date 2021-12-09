@@ -1,9 +1,9 @@
 function updateUser(){
     var oldEmail = localStorage.getItem("user");
-    oldEmail = JSON.parse(oldEmail)
+    oldEmail = JSON.parse(oldEmail) 
 
-    var email = document.getElementById("newEmail").value;
-    var password = document.getElementById("newPassword").value;
+    var email = document.getElementById("newEmail").value; //Hente den nye email brugeren skriver
+    var password = document.getElementById("newPassword").value; //Hente det nye password brugeren skriver
 
 
     //Laver en opdateret bruger
@@ -11,7 +11,7 @@ function updateUser(){
     const updateUser = {email: email, password: password, oldEmail: oldEmail.email};
     const Update = {email: email, password: password};
     fetch("http://localhost:8080/users/update", {
-        method: "PUT",
+        method: "PUT", //Benytter af HTTP request PUT
         headers: {
             "Content-Type": "application/json",
         },

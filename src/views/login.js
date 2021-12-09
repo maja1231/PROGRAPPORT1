@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     };
 
     fetch("http://localhost:8080/users/login", {
-      method: "POST",
+      method: "POST", //HTTP request POST metoden 
       headers: {
         "Content-Type": "application/json",
       },
@@ -29,9 +29,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
           
           localStorage.setItem("user", JSON.stringify(user));
-          location.href = "/";
+          location.href = "/"; //Hvis oplysningerne er rigtige vil vi blive hørt videre til index.js (Brugerens forside)
         } else {
-          window.alert("Oplysninger forkert");
+          window.alert("Oplysninger forkert"); //Hvis brugeren ikke eksisterer vil dette komme frem.
         }
       })
       .catch(() => {

@@ -18,13 +18,13 @@ class DB {
     fs.writeFileSync(ABSOLUTE_PATH + fileName, contentString);
   }
 
-  //Se fil med bruger
+  //Åben fil
   openFile(fileName) {
     const file = fs.readFileSync(ABSOLUTE_PATH + fileName); //ind i data mappen + ind i users.json
     return JSON.parse(file); //Gør filen til JSON
   }
 
-  //Log bruger ind
+  //Gem bruger
   saveUser(user) {
     this.users.push(user); //
     this.saveFile(USER_FILE, JSON.stringify(this.users));
@@ -39,7 +39,7 @@ class DB {
     this.saveFile(USER_FILE, JSON.stringify(this.users));
   }
 
-  //Vi finder brugeren efter den email + password de har skrevet
+  //Vi finder brugeren efter den email + password de har skrevet /Log ind, se om password og bruger logger ind
   findUser(user) {
     return this.users.find((x) => user.email == x.email);
   }
