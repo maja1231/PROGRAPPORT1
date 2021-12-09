@@ -1,4 +1,4 @@
-//"Når det denne besked kommer, vil dette ske" --> Giver submit kanppen funktionialitet
+//"Når denne besked kommer, vil dette ske" --> Giver submit kanppen funktionialitet
 document.addEventListener("DOMContentLoaded", (event) => {
   document.getElementById("form").addEventListener("submit", (event) => {
     event.preventDefault();
@@ -21,10 +21,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
       },
       body: JSON.stringify(user), //Gør JSON objekt til string, så serven kan forstå det
     })
-      .then((response) => response.json()) //Laver et promise .then (Værdien der skal komme) Response svar fra serveren.
+      .then((response) => response.json()) //Laver et promise .then (Værdien der skal komme) 
+                                          // --> Response svar fra serveren.
       .then((response) => { //Vores reponse er nu et JSON objekt.
         if (response) {
-          location.href = "/login.html"; //Hvis der ikke er en bruger der hedder dette i forvejen, vil brugeren blive ført videre til login siden.
+          location.href = "/login.html"; //Hvis bruger findes, 
+                                        // --> vil brugeren blive ført videre til login siden.
         }
       })
       .catch(() => {
@@ -32,3 +34,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
       });
   });
 });
+
+
+
+
+

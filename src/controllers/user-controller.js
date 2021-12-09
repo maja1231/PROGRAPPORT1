@@ -16,8 +16,8 @@ router.post("/create", (req, res) => {
 //Slet bruger
 router.delete("/delete", (req, res) => {
   const user = new userModel(req.body.email, req.body.password);
-  db.deleteUser(user);
-  res.status(200).send(true);
+  db.deleteUser(user); //brugeren vil slettes
+  res.status(200).send(true); //Giver svar at brugeren er slettet
 });
 
 

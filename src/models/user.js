@@ -1,4 +1,5 @@
 
+//Definerer User = Vi skal bruge email + password
 class User {
   constructor(email, password) {
     this.email = email;
@@ -7,3 +8,6 @@ class User {
 }
 
 module.exports = User;
+
+
+

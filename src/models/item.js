@@ -1,4 +1,5 @@
 
+//Definerer vare (item) = Vi skal bruge en vare + kategori + pris
 class Item {
     constructor(vare, vareKategori, pris) {
       this.vare = vare;
