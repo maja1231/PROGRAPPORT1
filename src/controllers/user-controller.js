@@ -6,7 +6,7 @@ const db = require("./../helpers/db"); //Henter fra Helpers mappen --> db.js
 
 //Register bruger
 router.post("/create", (req, res) => {
-  const user = new userModel(req.body.email, req.body.password);
+  const user = new userModel(req.body.email, req.body.password); //Hvad objektet user består af: email + password
   db.saveUser(user); //Hver gang vi kører "create" vil den registeret bruger gemmes. 
   res.status(200).send(true); //Giver svar tilbage at brugeren er blevet registeret
 });
