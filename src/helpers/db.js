@@ -13,23 +13,24 @@ class DB {
     this.users = this.openFile(USER_FILE); //users.json indholdet
   }
  
-  
+  //Gem fil
   saveFile(fileName, contentString) {
     fs.writeFileSync(ABSOLUTE_PATH + fileName, contentString);
   }
 
-  //Se fil med bruger bruger
+  //Se fil med bruger
   openFile(fileName) {
     const file = fs.readFileSync(ABSOLUTE_PATH + fileName); //ind i data mappen + ind i users.json
     return JSON.parse(file); //Gør filen til JSON
   }
 
-  //Gemmer fil med bruger
+  //Log bruger ind
   saveUser(user) {
-    this.users.push(user); 
+    this.users.push(user); //
     this.saveFile(USER_FILE, JSON.stringify(this.users));
   }
   
+
 
 
   //Slet brugeren
@@ -38,10 +39,10 @@ class DB {
     this.saveFile(USER_FILE, JSON.stringify(this.users));
   }
 
+  //Vi finder brugeren efter den email + password de har skrevet
   findUser(user) {
     return this.users.find((x) => user.email == x.email);
   }
-
 
   //Opdater brugeren
   updateUser(user) {
