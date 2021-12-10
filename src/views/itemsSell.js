@@ -5,7 +5,7 @@
     const item = JSON.parse(localStorage.getItem("item"));
   
     fetch("http://localhost:8080/items/delete", {
-      method: "DELETE",
+      method: "DELETE", //Benytter af HTTP request DELETE
       headers: {
         "Content-Type": "application/json",
       },
