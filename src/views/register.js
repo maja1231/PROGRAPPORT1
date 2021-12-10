@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     //Bruger fetch funktionen til at lave et "kald" til det linket localhost
     fetch("http://localhost:8080/users/create", {
-      method: "POST",
+      method: "POST",//Benytter af HTTP request POST
       headers: { 
         "Content-Type": "application/json", //Vores body vil være i form af JSON
       },

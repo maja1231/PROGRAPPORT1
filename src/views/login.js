@@ -19,9 +19,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     fetch("http://localhost:8080/users/login", {
       method: "POST", //HTTP request POST metoden 
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json", //Vores body vil være i form af JSON
       },
-      body: JSON.stringify(user),
+      body: JSON.stringify(user), //Gør JSON objekt til string, så serven kan forstå det
     })
       .then((response) => response.json())
       .then((response) => {

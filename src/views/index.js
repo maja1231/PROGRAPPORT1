@@ -11,9 +11,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const user = JSON.parse(localStorage.getItem("user"));
 
     fetch("http://localhost:8080/users/delete", {
-      method: "DELETE",
+      method: "DELETE", //Benytter af HTTP request DELETE
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json", //Vores body vil være i form af JSON
       },
       body: JSON.stringify(user),
     })

@@ -13,9 +13,9 @@ function updateUser(){
     fetch("http://localhost:8080/users/update", {
         method: "PUT", //Benytter af HTTP request PUT
         headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "application/json", //Vores body vil være i form af JSON
         },
-        body: JSON.stringify(updateUser),
+        body: JSON.stringify(updateUser), //Gør JSON objekt til string, så serven kan forstå det
     })
     .then((response) => response.json())
     .then((response) => {
