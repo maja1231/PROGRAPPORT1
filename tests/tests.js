@@ -10,9 +10,9 @@ describe('login', () => {
             chai
             .request('http://localhost:8080/users')
             .post('/login')
-            .send({email: 'hejmail.dk', password: '1234'})
+            .send({email: 'hejmail.dk', password: '1234'}) 
             .end((err, res) => {
-                res.should.have.status(200)
+                res.should.have.status(200) 
                 done()
             })
             describe('login', () => {
@@ -21,7 +21,7 @@ describe('login', () => {
                         chai
                         .request('http://localhost:8080/users')
                         .post('/login')
-                        .send({email: 'hejmail.dk', password: '4321'})
+                        .send({email: 'hejmail.dk', password: '4321'}) 
                         .end((err, res) => {
                             res.should.have.status(401);
                             done()
@@ -30,7 +30,7 @@ describe('login', () => {
                             describe('POST /login', () => {
                         it('den skal returnere et 404 response hvis user ikke eksisterer i databasen', function(done){
                             chai
-                            .request('http://localhost:8080/users')
+                            .request('http://localhost:8080/users') 
                             .post('/login')
                             .send({email:"nejhej.dk", password:"1234"})
                             .end((err, res) => {
