@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
           
           localStorage.setItem("user", JSON.stringify(user));
-          location.href = "/"; //Hvis oplysningerne er rigtige vil vi blive hørt videre til index.js (Brugerens forside)
+          location.href = "/"; //Hvis oplysningerne er rigtige vil vi blive ført videre til index.js (Brugerens forside)
         } else {
           window.alert("Oplysninger forkert"); //Hvis brugeren ikke eksisterer vil dette komme frem.
         }
