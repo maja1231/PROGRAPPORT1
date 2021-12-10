@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                                           // --> Response svar fra serveren.
       .then((response) => { //Vores reponse er nu et JSON objekt.
         if (response) {
-          location.href = "/login.html"; //Hvis bruger findes, 
+          location.href = "/login.html"; //Hvis succesfuldt brugeren bliver lavet 
                                         // --> vil brugeren blive ført videre til login siden.
         }
       })
@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       });
   });
 });
+
 
 
 
